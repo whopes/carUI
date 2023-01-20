@@ -5,7 +5,7 @@
 //  Created by Hopes, William (AMM) on 17/01/2023.
 //
 
-import CTest
+import XCTest
 
 class car_EWTests: XCTestCase {
 
@@ -19,6 +19,10 @@ class car_EWTests: XCTestCase {
         XCTAssertEqual(car.topSpeed, 125)
         XCTAssertEqual(car.acceleration, 7.7)
         XCTAssertEqual(car.handling, 5)
+        
+    }
+    
+    func carDisplaysStats() {
         
     }
 
