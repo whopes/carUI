@@ -14,6 +14,7 @@
 		627250702976C00C0077BD22 /* car_EWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272506F2976C00C0077BD22 /* car_EWTests.swift */; };
 		6272507A2976C00C0077BD22 /* car_EWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627250792976C00C0077BD22 /* car_EWUITests.swift */; };
 		6272507C2976C00C0077BD22 /* car_EWUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272507B2976C00C0077BD22 /* car_EWUITestsLaunchTests.swift */; };
+		627C381E297D6DC8005ED6BB /* starterCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627C381D297D6DC8005ED6BB /* starterCars.swift */; };
 		62FAB4DC2976C76200C8884B /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAB4DB2976C76200C8884B /* Car.swift */; };
 		62FAB4DD2976CA3A00C8884B /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FAB4DB2976C76200C8884B /* Car.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		627250752976C00C0077BD22 /* car EWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "car EWUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		627250792976C00C0077BD22 /* car_EWUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = car_EWUITests.swift; sourceTree = "<group>"; };
 		6272507B2976C00C0077BD22 /* car_EWUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = car_EWUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		627C381D297D6DC8005ED6BB /* starterCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = starterCars.swift; sourceTree = "<group>"; };
 		62FAB4DB2976C76200C8884B /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				627250622976C00C0077BD22 /* Assets.xcassets */,
 				627250642976C00C0077BD22 /* Preview Content */,
 				62FAB4DB2976C76200C8884B /* Car.swift */,
+				627C381D297D6DC8005ED6BB /* starterCars.swift */,
 			);
 			path = "car EW";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				627250612976C00A0077BD22 /* ContentView.swift in Sources */,
 				6272505F2976C00A0077BD22 /* car_EWApp.swift in Sources */,
+				627C381E297D6DC8005ED6BB /* starterCars.swift in Sources */,
 				62FAB4DC2976C76200C8884B /* Car.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

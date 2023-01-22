@@ -23,7 +23,18 @@ class car_EWTests: XCTestCase {
     }
     
     func carDisplaysStats() {
+        let car = Car(make: "Audi", model: "R-8", topSpeed: 125, acceleration: 7.7, handling: 5)
         
+        let expectedString = """
+        Make: \(car.make)
+        Model: \(car.model)
+        Top speed: \(car.topSpeed)mph
+        Acceleration (0-60): \(car.acceleration)s
+        Handling: \(car.handling)
+"""
+        let actualString = car.displayStats()
+        
+        XCTAssertEqual(expectedString, actualString)
     }
 
 }
