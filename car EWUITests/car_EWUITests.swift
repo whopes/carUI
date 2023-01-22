@@ -22,15 +22,49 @@ class car_EWUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testWhenBoughtTyresAndExhaustPackageOtherTwoUpgradesAreDisabled() throws {
+        //arrange
         let app = XCUIApplication()
         app.launch()
+        
+        //act
+                        
+        let tablesQuery = app.tables
+        tablesQuery.switches["Exhaust Package (Cost: 500)"].tap()
+        tablesQuery.switches["Tyres Package (Cost: 500)"].tap()
+        
+        //assert
+        XCTAssertEqual(tablesQuery.switches["Gears Package (Cost: 1000)"].isEnabled, false)
+        XCTAssertEqual(tablesQuery.switches["Full Package (Cost: 1500)"].isEnabled, false)
+        
+        
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
+    func testRemainingFundsUpdatesAfterExhaustAndTyresPackagesAreBought() throws {
+        //arrange
+        let app = XCUIApplication()
+        app.launch()
+        var remainingFunds = 1000
+        
+        //act
+                        
+        let tablesQuery = app.tables
+        tablesQuery.switches["Exhaust Package (Cost: 500)"].tap()
+        tablesQuery.switches["Tyres Package (Cost: 500)"].tap()
+        
+        //assert
+        XCTAssertEqual(remainingFunds, 0)
+        
+        
+
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.

@@ -15,35 +15,28 @@ struct ContentView: View {
     @State private var gearsPackage = false
     @State private var fullPackage = false
     @State private var remainingFunds = 1000
+    @State private var remainingTime = 30
     
     var exhaustPackageEnabled: Bool {
-        if remainingFunds >= 500 {
-            return true
-        } else {
-            return false
-        }
+        return remainingTime <= 0 ? false : exhaustPackage ? true : remainingFunds >= 500 ? true : false
     }
+    
     var tyresPackageEnabled: Bool {
-        if remainingFunds >= 500 {
-            return true
-        } else {
-            return false
-        }
+        return remainingTime <= 0 ? false : tyresPackage ? true : remainingFunds >= 500 ? true : false
     }
+    
     var gearsPackageEnabled: Bool {
-        if remainingFunds >= 1000 {
-            return true
-        } else {
-            return false
-        }
+        return remainingTime <= 0 ? false : gearsPackage ? true : remainingFunds >= 1000 ? true : false
     }
+
     var fullPackageEnabled: Bool {
-        if remainingFunds >= 1500 {
-            return true
-        } else {
-            return false
-        }
+        return remainingTime <= 0 ? false : fullPackage ? true : remainingFunds >= 1500 ? true : false
     }
+    var buttonEnabled: Bool {
+        return remainingTime > 0 ? true : false
+    }
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         let exhaustPackageBinding = Binding<Bool> (
@@ -107,6 +100,13 @@ struct ContentView: View {
                 )
         
         VStack {
+            Text("\(remainingTime)")
+                .onReceive(timer) { _ in
+                    if self.remainingTime > 0 {
+                        self.remainingTime -= 1
+                    }
+                }
+                .foregroundColor(.red)
             Form {
                 VStack(alignment: .leading, spacing: 20) {
                     Text("\(starterCars.cars[selectedCar].displayStats())")
@@ -119,6 +119,7 @@ struct ContentView: View {
                             selectedCar += 1
                         }
                     })
+                        .disabled(!buttonEnabled)
                 }
                 Section {
                     Toggle("Exhaust Package (Cost: 500)", isOn: exhaustPackageBinding)
